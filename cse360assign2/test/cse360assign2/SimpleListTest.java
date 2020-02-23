@@ -2,7 +2,7 @@
  * @author Joseph Cushmore
  * 
  * ClassID: 168
- * Assign1 
+ * Assign2 
  * 
  * This file contains the testing for the SimpleList class.
  */
@@ -58,7 +58,7 @@ class SimpleListTest
 		myList.add(11);
 		
 		// Check
-		assertEquals(10,myList.count());
+		assertEquals(11,myList.count());
 	}
 	
 	
@@ -196,7 +196,7 @@ class SimpleListTest
 		myList1.add(12);
 		
 		// Check
-		assertEquals("12 11 10 9 8 7 6 5 4 3",myList1.toString());
+		assertEquals("12 11 10 9 8 7 6 5 4 3 2 1",myList1.toString());
 	}
 	
 	
@@ -257,8 +257,172 @@ class SimpleListTest
 		myList1.add(4);
 		
 		// Check
-		assertEquals(-1, myList1.search(1));
+		assertEquals(11, myList1.search(1));
 	}
 	
+	@Test
+	public void addEightAndRemoveOne()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(5);
+		myList1.add(6);
+		myList1.add(7);
+		myList1.add(8);
+		myList1.remove(4);
+		
+		// Check
+		assertEquals(7, myList1.size());
+	}
+	
+	@Test
+	public void addNineAndRemoveOne()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(5);
+		myList1.add(6);
+		myList1.add(7);
+		myList1.add(8);
+		myList1.add(9);
+		myList1.remove(3);
+		
+		// Check
+		assertEquals(10, myList1.size());
+	}
+	
+	@Test
+	public void addAndLookAtFirst()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(2);
+		
+		
+		// Check
+		assertEquals(2, myList1.first());
+	}
+	
+	@Test
+	public void appendAndLookAtFirst()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.append(1);
+		myList1.append(2);
+		myList1.append(3);
+		myList1.append(4);
+		myList1.append(2);
+		
+		
+		// Check
+		assertEquals(1, myList1.first());
+	}
+	
+	@Test
+	public void appendAndLookAtFirstToString()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.append(1);
+		myList1.append(2);
+		myList1.append(3);
+		myList1.append(4);
+		myList1.append(2);
+		
+		
+		// Check
+		assertEquals("1 2 3 4 2", myList1.toString());
+	}
+	
+	//----------Test size() -------------
+	//--------------------------------------
+	@Test
+	public void addOneRemoveOneAddOneSize()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.remove(1);
+		myList1.add(3);
+		
+		// Check
+		assertEquals(1, myList1.size());
+	}
+	
+	
+	// Size after 11 adds.
+	@Test
+	public void addElevenSize()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(5);
+		myList1.add(6);
+		myList1.add(7);
+		myList1.add(8);
+		myList1.add(9);
+		myList1.add(10);
+		myList1.add(11);
+		
+		
+		// Check
+		assertEquals(15 , myList1.size());
+	}
+	
+	// Size after 11 adds.
+		@Test
+		public void addTenSize()
+		{
+			//Setup
+			SimpleList myList1 = new SimpleList();
+			
+			// Execution
+			myList1.add(1);
+			myList1.add(2);
+			myList1.add(3);
+			myList1.add(4);
+			myList1.add(5);
+			myList1.add(6);
+			myList1.add(7);
+			myList1.add(8);
+			myList1.add(9);
+			myList1.add(10);
+			
+			
+			
+			// Check
+			assertEquals(10 , myList1.size());
+		}
 	
 }
