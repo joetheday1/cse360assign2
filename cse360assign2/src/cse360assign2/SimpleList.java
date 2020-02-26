@@ -3,7 +3,7 @@
  * 
  * ClassID: 168
  * Assign2 
- * 
+ * Version 3
  *            ==== github link =======
  * https://github.com/joetheday1/cse360assign2
  * 
@@ -221,7 +221,6 @@ public class SimpleList
     	 return this.count;
      }
      
-     /* REMOVE THIS LINE=======================================
      /**
       * This method returns the first value stored in the SimpleList.
       * 
@@ -229,7 +228,6 @@ public class SimpleList
       * 		If the list is empty and there is no first value -999 will
       * 		be returned.
       */
-     /* REMOVE THIS LINE======================================
      public int first()
      {
     	 if (this.count > 0)
@@ -242,16 +240,13 @@ public class SimpleList
     	 //       no list at all (it is null).
     	 return -999;
      }
-    ================================================ REMOVE THIS LINE */
      
      
-     /* REMOVE THIS LINE=======================================
      /**
       * This method returns the size of the size of the array.
       * 
       * @return The value of the size of the array.
       */
-     /* REMOVE THIS LINE=======================================
      public int size()
      {
     	 return this.size;
@@ -264,7 +259,6 @@ public class SimpleList
       * 
       * @param num The value to be added to the end of the list.
       */
-     /* REMOVE THIS LINE=======================================
      public void append(int num)
      {
     	 if (this.count >= this.size)
@@ -306,7 +300,7 @@ public class SimpleList
 		 this.list[this.count] = num;
  		 ++this.count;
      }
-     ================================================ REMOVE THIS LINE */
+    
 
      
      /**
