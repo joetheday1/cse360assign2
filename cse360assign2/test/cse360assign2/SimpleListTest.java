@@ -303,6 +303,8 @@ class SimpleListTest
 		assertEquals(10, myList1.size());
 	}
 	
+	
+	//============first() test===========
 	@Test
 	public void addAndLookAtFirst()
 	{
@@ -356,6 +358,59 @@ class SimpleListTest
 		// Check
 		assertEquals("1 2 3 4 2", myList1.toString());
 	}
+	
+	// ===========last() test ====================
+	@Test
+	public void addAndLookAtLast()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(2);
+		
+		
+		// Check
+		assertEquals(1, myList1.last());
+	}
+	
+	
+	public void addThenAppendLookAtLast()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.add(2);
+		myList1.add(3);
+		myList1.add(4);
+		myList1.add(2);
+		myList1.append(5);
+		
+		// Check
+		assertEquals(5, myList1.last());
+	}
+	
+	@Test
+	public void addRemoveLookAtLast()
+	{
+		//Setup
+		SimpleList myList1 = new SimpleList();
+		
+		// Execution
+		myList1.add(1);
+		myList1.remove(1);
+		
+		
+		// Check
+		assertEquals(-1, myList1.last());
+	}
+	
 	
 	//----------Test size() -------------
 	//--------------------------------------

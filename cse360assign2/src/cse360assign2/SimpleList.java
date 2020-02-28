@@ -3,7 +3,7 @@
  * 
  * ClassID: 168
  * Assign2 
- * Version 4
+ * version 5
  *            ==== github link =======
  * https://github.com/joetheday1/cse360assign2
  * 
@@ -225,7 +225,7 @@ public class SimpleList
       * This method returns the first value stored in the SimpleList.
       * 
       * @return The number of values currently stored in the SimpleList.
-      * 		If the list is empty and there is no first value -999 will
+      * 		If the list is empty and there is no first value -1 will
       * 		be returned.
       */
      public int first()
@@ -235,12 +235,28 @@ public class SimpleList
     		 return this.list[0];
     	 }
     	 
-    	 // NOTE: This case was not specified in the documentation.
-    	 //       Furthermore, if the size can be 0, then there is
-    	 //       no list at all (it is null).
-    	 return -999;
+    	 // Changed to return -1 if count is <= 0.
+    	 return -1;
      }
      
+     
+     /**
+      * This method returns the last value stored in the SimpleList.
+      * 
+      * @return The number of values currently stored in the SimpleList.
+      * 		If the list is empty and there is no last value -1 will
+      * 		be returned.
+      */
+     public int last()
+     {
+    	 if (this.count > 0)
+    	 {
+    		 return this.list[this.count - 1];
+    	 }
+    	 
+    	 // Changed to return -1 if count is <= 0.
+    	 return -1;
+     }
      
      /**
       * This method returns the size of the size of the array.
